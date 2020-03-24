@@ -3,45 +3,136 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.sanjeev139.test007</groupId>
-	<artifactId>test007</artifactId>
-	<version>1.0.0--SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<groupId>com.github.sanjeev139</groupId>
+	<artifactId>JavaCICDTest</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>Aritmetic Test Library</name>
+	<description>Sample Arithmatic test library</description>
+	<url>https://github.com/Sanjeev139/JavaCICDTest</url>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			 <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>                          
+                            <source>1.8</source>                                
+                            <doclint>none</doclint>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
 
-	<name>testLib001</name>
-	<description>A simple collection of utility classes to promote functional-style programming in Java.</description>
-	<url>https://gitlab.com/sanjeevezpg/javacicdtest</url>
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>-->
+			
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<sourcepath>${project.basedir}/src/main</sourcepath>
+					<aggregate>false</aggregate>
+					<additionalparam>${javadoc.opts}</additionalparam>
+					<additionalOptions>
+						<additionalOption>-Xdoclint:none</additionalOption>
+					</additionalOptions>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>javadoc</goal>
+						</goals>
+						<phase>process-resources</phase>
+					</execution>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>-->
+		</plugins>
+	</build>
 
 	<licenses>
+
 		<license>
-			<name>GNU Lesser General Public License v3.0</name>
-			<url>https://www.gnu.org/licenses/agpl-3.0.txt</url>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
 		</license>
 	</licenses>
-
-	<developers>
-		<developer>
-			<name>Sanjeev Kr</name>
-			<email>bigyan.sahoo@securax.in</email>
-			<url>https://gitlab.com/sanjeevezpg</url>
-		</developer>
-	</developers>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>11</java.version>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<junit.jupiter.version>5.4.2</junit.jupiter.version>
-		<assertj.version>3.12.2</assertj.version>
-	</properties>
-
-	<scm>
-		<connection>https://gitlab.com/sanjeevezpg/javacicdtest.git</connection>
-		<developerConnection>git@gitlab.com:sanjeevezpg/javacicdtest.git</developerConnection>
-		<url>https://gitlab.com/sanjeevezpg/javacicdtest.git</url>
-	</scm>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -52,102 +143,36 @@
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
+
 	</distributionManagement>
+	<scm>
+		<connection>scm:git:git://github.com/Sanjeev139/JavaCICDTest.git</connection>
+		<developerConnection>scm:git:ssh://github.com/Sanjeev139/JavaCICDTest.git</developerConnection>
+		<url>https://github.com/Sanjeev139/JavaCICDTest.git</url>
+	</scm>
+	<profiles>
+		<profile>
+			<id>JavaCICDTest</id>
+		</profile>
+	</profiles>
+	<developers>
+		<developer>
+			<name>abctest</name>
+			<email>abc@gmail.com</email>
+			<organization>com.github.Sanjeev139</organization>
+			<organizationUrl>https://github.com/Sanjeev139/JavaCICDTest.git</organizationUrl>
+		</developer>
+	</developers>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>${junit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>${assertj.version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<profiles>
-		<profile>
-			<id>release</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>3.1.0</version>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>3.1.0</version>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-								<configuration>
-									<gpgArguments>
-										<arg>--pinentry-mode</arg>
-										<arg>loopback</arg>
-									</gpgArguments>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.8</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>false</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
-
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
-
-	<build>
-		<plugins>
-			<!-- JUnit 5 requires Surefire version 2.22.1 or higher -->
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.1</version>
-			</plugin>
-		</plugins>
-	</build>
 </project>
