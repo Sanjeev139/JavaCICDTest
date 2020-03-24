@@ -3,15 +3,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.gitlab.bigyanb5</groupId>
-	<artifactId>test1203</artifactId>
+	<groupId>com.sanjeev139.test007</groupId>
+	<artifactId>test007</artifactId>
 	<version>1.0.0--SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 
 	<name>testLib001</name>
 	<description>A simple collection of utility classes to promote functional-style programming in Java.</description>
-	<url>https://gitlab.com/bigyanb5/testosscliv03</url>
+	<url>https://gitlab.com/sanjeevezpg/javacicdtest</url>
 
 	<licenses>
 		<license>
@@ -22,9 +22,9 @@
 
 	<developers>
 		<developer>
-			<name>Bigyan Sahoo</name>
+			<name>Sanjeev Kr</name>
 			<email>bigyan.sahoo@securax.in</email>
-			<url>https://gitlab.com/bigyanb5</url>
+			<url>https://gitlab.com/sanjeevezpg</url>
 		</developer>
 	</developers>
 
@@ -38,9 +38,9 @@
 	</properties>
 
 	<scm>
-		<connection>https://gitlab.com/bigyanb5/testosscliv03.git</connection>
-		<developerConnection>git@gitlab.com:bigyanb5/testosscliv03.git</developerConnection>
-		<url>https://gitlab.com/bigyanb5/testosscliv03</url>
+		<connection>https://gitlab.com/sanjeevezpg/javacicdtest.git</connection>
+		<developerConnection>git@gitlab.com:sanjeevezpg/javacicdtest.git</developerConnection>
+		<url>https://gitlab.com/sanjeevezpg/javacicdtest.git</url>
 	</scm>
 
 	<distributionManagement>
